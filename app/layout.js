@@ -1,7 +1,6 @@
-import { Inter } from "next/font/google";
-import "./globals.css";
+import Nav from "@/components/Nav";
 
-const inter = Inter({ subsets: ["latin"] });
+import "./globals.css";
 
 export const metadata = {
   title: "Create Next App",
@@ -10,8 +9,23 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
+    // <html lang="en">
+    //   <body style={{ display: "flex" }}>
+    //     <Nav />
+    //     <div style={{ flex: 1 }}>
+    //       <div style={{ marginLeft: "5vw" }}>{children}</div>
+    //     </div>
+    //   </body>
+    // </html>
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <div style={{ display: "flex" }}>
+          <div style={{ width: "200px" }}>
+            <Nav />
+          </div>
+          <div style={{ flexGrow: 1, padding: "0.75rem" }}>{children}</div>
+        </div>
+      </body>
     </html>
   );
 }
