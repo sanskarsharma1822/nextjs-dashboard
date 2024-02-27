@@ -36,7 +36,20 @@ import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LogoutIcon from "@mui/icons-material/Logout";
+import KeyboardDoubleArrowRightSharpIcon from "@mui/icons-material/KeyboardDoubleArrowRightSharp";
 import "./styles.module.css";
+
+import EditNoteSharpIcon from "@mui/icons-material/EditNoteSharp";
+import BarChartSharpIcon from "@mui/icons-material/BarChartSharp";
+import NewReleasesSharpIcon from "@mui/icons-material/NewReleasesSharp";
+import SearchSharpIcon from "@mui/icons-material/SearchSharp";
+import DescriptionSharpIcon from "@mui/icons-material/DescriptionSharp";
+
+import EditNoteOutlinedIcon from "@mui/icons-material/EditNoteOutlined";
+// import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
+import NewReleasesOutlinedIcon from "@mui/icons-material/NewReleasesOutlined";
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 
 const Item = ({ title, to, icon, selected, setSelected, collapse }) => {
   return (
@@ -46,12 +59,12 @@ const Item = ({ title, to, icon, selected, setSelected, collapse }) => {
         style={{
           // color: "#e0e0e0",
           color: selected == title ? "white" : "#e0e0e0",
-          margin: collapse ? "12vh 0" : "1.75vh 0",
+          margin: collapse ? "12vh 0" : "0.75vh 0",
         }}
         onClick={() => setSelected(title)}
         icon={icon}
       >
-        <Typography style={{ fontSize: "14px", fontWeight: "600" }}>
+        <Typography style={{ fontSize: "11px", fontWeight: "600" }}>
           {title}
         </Typography>
         {/* <Link to="/" /> */}
@@ -71,7 +84,7 @@ const Nav = () => {
         rootStyles={{
           opacity: "1 !important",
           height: "100vh",
-          minWidth: "200px",
+          minWidth: "180px",
           width: "180px",
           borderColor: "#1F2A40",
         }}
@@ -84,6 +97,8 @@ const Nav = () => {
             button: {
               "&:hover": {
                 backgroundColor: "transparent",
+                color: "white !important",
+                // boxShadow: "0 0 5px rgba(0, 0, 0, 0.3)",
               },
             },
           }}
@@ -106,28 +121,28 @@ const Nav = () => {
                 // mt="8vh"
               >
                 <img
-                  src="../images/zs logo.png"
+                  src="../images/ZS Logo White RGB.png"
                   // src="public\images\soulestate-high-resolution-logo-white-on-transparent-background.png"
                   alt="profile"
-                  height="80px"
-                  width="100px"
+                  height="100px"
+                  width="120px"
                 />
-                <IconButton
+                {/* <IconButton
                   style={{ color: "white" }}
                   onClick={() => setIsCollapsed(!isCollapsed)}
                 >
-                  <MenuOutlinedIcon />
-                </IconButton>
+                  <KeyboardDoubleArrowRightSharpIcon />
+                </IconButton> */}
               </Box>
             )}
           </MenuItem>
 
-          {!isCollapsed && (
+          {/* {!isCollapsed && (
             <div style={{ textAlign: "center", marginTop: "60px" }}>
               <AccountCircleIcon
                 style={{
-                  height: "116.6px",
-                  width: "116.6px",
+                  height: "86.6px",
+                  width: "86.6px",
                   color: "white",
                   marginBottom: "-0.5vh",
                 }}
@@ -136,10 +151,10 @@ const Nav = () => {
                 User
               </Typography>
             </div>
-          )}
+          )} */}
 
           <Box
-            marginTop={isCollapsed ? "10vh" : "6vh"}
+            marginTop={isCollapsed ? "10vh" : "10vh"}
             paddingLeft={isCollapsed ? undefined : "2%"}
           >
             <Item
@@ -150,25 +165,73 @@ const Nav = () => {
               setSelected={setSelected}
               collapse={isCollapsed}
             />
-            <Item
-              title="Manage Team"
-              to="/"
-              icon={<PeopleOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-              collapse={isCollapsed}
-            />
-            <Item
-              title="Contacts Information"
-              to="/"
-              icon={<ContactsOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-              collapse={isCollapsed}
-            />
+            <Box style={{ margin: "3vh 0 3vh" }}>
+              <Typography
+                style={{
+                  fontSize: "13px",
+                  color: "#a3a3a3",
+                  paddingLeft: "0.5vw",
+                }}
+              >
+                Requests
+              </Typography>
+
+              <Item
+                title="Requests Input"
+                to="/"
+                icon={<EditNoteOutlinedIcon />}
+                selected={selected}
+                setSelected={setSelected}
+                collapse={isCollapsed}
+              />
+              <Item
+                title="Daily Output"
+                to="/"
+                icon={<BarChartOutlinedIcon />}
+                selected={selected}
+                setSelected={setSelected}
+                collapse={isCollapsed}
+              />
+              <Item
+                title="AdHoc Output"
+                to="/"
+                icon={<NewReleasesOutlinedIcon />}
+                selected={selected}
+                setSelected={setSelected}
+                collapse={isCollapsed}
+              />
+            </Box>
+            <Box>
+              <Typography
+                style={{
+                  fontSize: "13px",
+                  color: "#a3a3a3",
+                  paddingLeft: "0.5vw",
+                }}
+              >
+                Research
+              </Typography>
+
+              <Item
+                title="Research Input"
+                to="/"
+                icon={<SearchOutlinedIcon />}
+                selected={selected}
+                setSelected={setSelected}
+                collapse={isCollapsed}
+              />
+              <Item
+                title="Research Output"
+                to="/"
+                icon={<DescriptionOutlinedIcon />}
+                selected={selected}
+                setSelected={setSelected}
+                collapse={isCollapsed}
+              />
+            </Box>
           </Box>
           <Box
-            marginTop={isCollapsed ? "18vh" : "15vh"}
+            marginTop={isCollapsed ? "18vh" : "9vh"}
             paddingLeft={isCollapsed ? "4%" : "6%"}
           >
             <MenuItem

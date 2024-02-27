@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <div style={{ display: "flex" }}>
-          <div style={{ width: "200px" }}>
+          <div style={{ minWidth: "180px" }}>
             <Nav />
           </div>
           <div style={{ flexGrow: 1, padding: "0.75rem" }}>{children}</div>
