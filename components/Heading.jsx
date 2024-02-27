@@ -4,7 +4,7 @@ import Grid from "@mui/material/Unstable_Grid2";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 export default function Heading({ title, subtitle }) {
   return (
-    <Grid container>
+    <Grid container style={{ marginBottom: "4vh" }}>
       <Grid xs={6}>
         <Typography
           style={{ color: "white", fontSize: "40px", fontWeight: "bold" }}

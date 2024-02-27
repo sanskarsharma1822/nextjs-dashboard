@@ -41,7 +41,7 @@ export default function Home() {
   return (
     <Box padding="2vh 1.25vw 2vh 1.25vw" height="90vh">
       <Heading title="Dashboard" subtitle="Welcome to the Dashboard" />
-      <Box m="40px 0 0 0" height="70vh" width="100%">
+      <Box height="75vh" width="100%">
         <DataGrid
           // checkboxSelection
           rows={mockDataTeam}
